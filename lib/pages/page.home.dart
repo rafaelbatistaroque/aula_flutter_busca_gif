@@ -10,7 +10,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar()
+      appBar: buildAppBar(),
+      body: Column(
+        children: <Widget>[
+          Padding(
+          padding: EdgeInsets.all(10),
+          child: buildSearchBox(),
+          ),
+        ],  
+      )
     );
   }
 }

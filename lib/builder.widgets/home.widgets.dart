@@ -9,3 +9,15 @@ Widget buildAppBar(){
         centerTitle: true
       );
 }
+
+Widget buildSearchBox(){
+  return TextField(
+    decoration: InputDecoration(
+      labelText: "Pesquisar",
+      labelStyle: TextStyle(color: Colors.grey),
+      border: OutlineInputBorder()
+      ),
+    style: TextStyle(color: Colors.grey),
+    textAlign: TextAlign.center,
+  );
+}
