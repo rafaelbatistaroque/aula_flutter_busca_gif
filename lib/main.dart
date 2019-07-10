@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Busca GIFs",
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(highlightColor: Colors.grey),
       home: Home()
     );
   }
