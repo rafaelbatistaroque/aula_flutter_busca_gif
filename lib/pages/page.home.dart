@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
                     return buildLoading();
                 default:
                   if (snapshot.hasError) return Container();
-                  else return Container();
+                  else return createGridGIF(context, snapshot);
                 }
               }
             )
