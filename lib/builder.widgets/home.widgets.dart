@@ -21,3 +21,15 @@ Widget buildSearchBox(){
     textAlign: TextAlign.center,
   );
 }
+
+Widget buildLoading(){
+  return Container(
+          width: 200,
+          height: 200,
+          alignment: Alignment.center,
+          child: CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+            strokeWidth: 5,
+          ),
+        );
+}
