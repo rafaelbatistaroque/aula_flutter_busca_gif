@@ -11,26 +11,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(),//Constrói a appBar.
       body: Column(
         children: <Widget>[
           Padding(
           padding: EdgeInsets.all(10),
-          child: buildSearchBox(),
+          child: buildSearchBox(), //Constrói a caixa de pesquisa de GIFs.
           ),
           Expanded(
             child: FutureBuilder(
-              future: getGIF(),
-              builder: (context, snapshot){
-                switch (snapshot.connectionState){
-                  case ConnectionState.waiting:
-                  case ConnectionState.none:
-                    return buildLoading();
-                default:
-                  if (snapshot.hasError) return Container();
-                  else return createGridGIF(context, snapshot);
-                }
-              }
+              future: getGIF(), //Faz a requisição do GIFs pela API.
+              builder: createGridGIF// Constrói a grade de GIFs na body do App.
             )
           )
         ],  
