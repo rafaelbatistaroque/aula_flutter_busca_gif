@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:aula_flutter_busca_gif/functions/function.request.dart';
 
 final _imageTop = "https://developers.giphy.com/static/img/dev-logo-lg.7404c00322a8.gif";
 
@@ -19,6 +20,9 @@ Widget buildSearchBox(){
       ),
     style: TextStyle(color: Colors.grey),
     textAlign: TextAlign.center,
+    onSubmitted: (text){
+      search = text;
+    },
   );
 }
 
