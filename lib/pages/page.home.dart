@@ -1,6 +1,9 @@
 import 'dart:convert';
+import 'package:aula_flutter_busca_gif/pages/page.share.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+
+final String imageTop = "https://developers.giphy.com/static/img/dev-logo-lg.7404c00322a8.gif";
 
 class Home extends StatefulWidget {
   @override
@@ -11,8 +14,6 @@ class _HomeState extends State<Home> {
 
   String _search;
   int _offSet = 0;
-
-  final String _imageTop = "https://developers.giphy.com/static/img/dev-logo-lg.7404c00322a8.gif";
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class _HomeState extends State<Home> {
   Widget _buildAppBar(){
     return AppBar(
       backgroundColor: Colors.black,
-      title: Image.network(_imageTop),
+      title: Image.network(imageTop),
       centerTitle: true
     );
 }
@@ -112,6 +113,11 @@ class _HomeState extends State<Home> {
                     height: 300,
                     fit: BoxFit.cover,
                     ),
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => GifPage(snapshot.data["data"][index]))
+                    );
+                  },
                 );
               else
                 return Container(
